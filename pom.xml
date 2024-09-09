@@ -107,6 +107,17 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<cleanDisabled>false</cleanDisabled>
+					<url>jdbc:mysql://localhost:5432/social_network_db</url>
+					<user>spencer</user>
+					<password>spencer</password>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
