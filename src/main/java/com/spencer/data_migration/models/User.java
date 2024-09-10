@@ -30,8 +30,6 @@ public class User {
     @Column(name = "identity",nullable = false)
     private String identity;
 
-    private String bio;
-
     @Column(name = "phone_number")
     private String phoneNumber;
 
