@@ -113,7 +113,7 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<configuration>
 					<cleanDisabled>false</cleanDisabled>
-					<url>jdbc:mysql://localhost:5432/social_network_db</url>
+					<url>jdbc:mysql://localhost:3306/social_network_db</url>
 					<user>spencer</user>
 					<password>spencer</password>
 				</configuration>

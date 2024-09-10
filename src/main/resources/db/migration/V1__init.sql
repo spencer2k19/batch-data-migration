@@ -1,0 +1,42 @@
+CREATE TABLE comments
+(
+    id             BIGINT AUTO_INCREMENT NOT NULL,
+    content        TEXT NOT NULL,
+    publication_id BIGINT NULL,
+    user_id        BIGINT NULL,
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT pk_comments PRIMARY KEY (id)
+);
+
+CREATE TABLE publications
+(
+    id         BIGINT AUTO_INCREMENT NOT NULL,
+    media      VARCHAR(255) NOT NULL,
+    content   TEXT NOT NULL,
+    user_id    BIGINT NULL,
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT pk_publications PRIMARY KEY (id)
+);
+
+CREATE TABLE socialite_users
+(
+    id           BIGINT AUTO_INCREMENT NOT NULL,
+    email        VARCHAR(255) NOT NULL,
+    password     VARCHAR(255) NOT NULL,
+    identity     VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(255) NULL,
+    created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT pk_socialite_users PRIMARY KEY (id)
+);
+
+ALTER TABLE comments
+    ADD CONSTRAINT FK_COMMENTS_ON_PUBLICATION FOREIGN KEY (publication_id) REFERENCES publications (id);
+
+ALTER TABLE comments
+    ADD CONSTRAINT FK_COMMENTS_ON_USER FOREIGN KEY (user_id) REFERENCES socialite_users (id);
+
+ALTER TABLE publications
+    ADD CONSTRAINT FK_PUBLICATIONS_ON_USER FOREIGN KEY (user_id) REFERENCES socialite_users (id);

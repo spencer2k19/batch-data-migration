@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseMigrationSettings" lastSelectedDirectory="src/main/resources/db/migration" />
+  <component name="JpaLiquibaseChangesConfig">
+    <exclude-change idName="JOB_EXEC_CTX_FK" tagName="dropForeignKeyConstraint" />
+    <exclude-change idName="JOB_EXEC_PARAMS_FK" tagName="dropForeignKeyConstraint" />
+    <exclude-change idName="JOB_EXEC_STEP_FK" tagName="dropForeignKeyConstraint" />
+    <exclude-change idName="JOB_INST_EXEC_FK" tagName="dropForeignKeyConstraint" />
+    <exclude-change idName="STEP_EXEC_CTX_FK" tagName="dropForeignKeyConstraint" />
+    <exclude-change idName="BATCH_JOB_EXECUTION" tagName="dropTable" />
+    <exclude-change idName="BATCH_JOB_EXECUTION_CONTEXT" tagName="dropTable" />
+    <exclude-change idName="BATCH_JOB_EXECUTION_PARAMS" tagName="dropTable" />
+    <exclude-change idName="BATCH_JOB_EXECUTION_SEQ" tagName="dropTable" />
+    <exclude-change idName="BATCH_JOB_INSTANCE" tagName="dropTable" />
+    <exclude-change idName="BATCH_JOB_SEQ" tagName="dropTable" />
+    <exclude-change idName="BATCH_STEP_EXECUTION" tagName="dropTable" />
+    <exclude-change idName="BATCH_STEP_EXECUTION_CONTEXT" tagName="dropTable" />
+    <exclude-change idName="BATCH_STEP_EXECUTION_SEQ" tagName="dropTable" />
+  </component>
+  <component name="PersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="data-migration" name="Default">
+        <packages>
+          <package value="com.spencer.data_migration" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+</project>
